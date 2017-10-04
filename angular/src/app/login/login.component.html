@@ -1,6 +1,25 @@
-<div id="loginBackground">
-<h2>Stud</h2>
-<h1>dnisdfnf slf idvsd</h1>
+<md-card class="">
+  <md-card-header>
+    <md-card-title-group>
+      Login
+    </md-card-title-group>
+    <md-card-subtitle>
+      Input data
+    </md-card-subtitle>
+  </md-card-header>
 
+  <md-card-content>
+    <!--<form class="form-group">-->
+      <md-input-container>
+        <input mdInput [(ngModel)]="user.eMailAdress" name="eMail" type="email" required
+               placeholder="Email Address">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput [(ngModel)]="user.password" name="password" type="password" required
+               placeholder="Password">
+      </md-input-container>>
 
-</div>
+    <button class="btn btn-primary" (click)="login()">Login</button>
+  </md-card-content>
+
+</md-card>

@@ -5,14 +5,15 @@
 import {Address} from './address';
 
 export class User {
-  private username: string;
-  private password: string;
-  private firstName : string;
-  private middleName : string;
-  private lastName : string;
-  private dateOfBirth : Date;
-  private eMailAdress: string;
-  private address: Address;
+  public eMailAdress: string;
+  public username: string;
+  public password: string;
+  public firstName : string;
+  public middleName : string;
+  public lastName : string;
+  public dateOfBirth : Date;
+
+  public address: Address;
 
 
 

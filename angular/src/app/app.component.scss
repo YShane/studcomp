@@ -1,0 +1,13 @@
+@import '../app-colors';
+
+
+.footer{
+ display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color:  $primary-color-borders;
+}
