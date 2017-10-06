@@ -1,4 +1,4 @@
-package config.security;
+package config.SpringSecurityConfig;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,25 +26,33 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
      * */
 
 
-
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
-    }
+    protected void configure(HttpSecurity http) throws Exception {
 
-
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-
-
-        httpSecurity
+        http
                 .authorizeRequests()
-                .an
-        httpSecurity.csrf().disable();
-
-                        .
+                .anyRequest()
+                .permitAll()
+                .and()
+                .httpBasic();
+        http.csrf().disable();
         logger.info("Spring Security http config done");
     }
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth
+//                // enable in memory based authentication with a user named "user" and "admin"
+//                .inMemoryAuthentication().withUser("user").password("password").roles("USER")
+//                .and().withUser("admin").password("password").roles("USER", "ADMIN");
+//    }
+//
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring()
+//                // Spring Security should completely ignore URLs starting with /resources/
+//                .antMatchers("/resources/**");
+//    }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
